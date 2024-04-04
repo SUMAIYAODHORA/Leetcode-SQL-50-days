@@ -77,10 +77,10 @@ As we can see, users with IDs 30 and 96 visited the mall one time without making
 </pre>
 </div>
 
-Another solution: 
-select v.customer_id, count(v.visit_id) as count_no_trans
-from Visits v
-left join Transactions t
-on v.visit_id=t.visit_id
-where v.visit_id not in (select visit_id from Transactions)
-group by v.customer_id
+#Another solution: 
+select v.customer_id, count(v.visit_id) as count_no_trans.
+from Visits v.
+left join Transactions t.
+on v.visit_id=t.visit_id.
+where v.visit_id not in (select visit_id from Transactions).
+group by v.customer_id.
