@@ -74,13 +74,15 @@ Customer with id = 30 visited the mall once and did not make any transactions.
 Customer with id = 54 visited the mall three times. During 2 visits they did not make any transactions, and during one visit they made 3 transactions.
 Customer with id = 96 visited the mall once and did not make any transactions.
 As we can see, users with IDs 30 and 96 visited the mall one time without making any transactions. Also, user 54 visited the mall twice and did not make any transactions.
-</pre>
-</div>
 
-#Another solution: 
+  #Another solution: 
 select v.customer_id, count(v.visit_id) as count_no_trans.
 from Visits v.
 left join Transactions t.
 on v.visit_id=t.visit_id.
 where v.visit_id not in (select visit_id from Transactions).
 group by v.customer_id.
+</pre>
+</div>
+
+
